@@ -1,0 +1,149 @@
+/* Page center karne ke liye */
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url(OIP.jpeg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+/* Calculator container */
+#calculator{
+    width: 400px;
+    padding: 22px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+
+    transition: transform .25s ease;
+}
+
+#calculator:hover{
+    transform: translateY(-6px);
+}
+
+/* Display screen */
+#display{
+    width: 93%;
+    height: 70px;
+    padding: 12px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    background: #0b0f14;
+    color: #00ffc3;
+    font-size: 30px;
+    text-align: right;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    box-shadow:
+        inset 0 0 10px rgba(0,255,195,0.6),
+        inset 0 0 25px rgba(0,255,195,0.2);
+
+    text-shadow: 0 0 8px rgba(0,255,195,0.7);
+}
+
+/* Buttons grid */
+.button-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+button{
+    height: 65px;
+    font-size: 25px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 0 #1a252f,
+        0 12px 20px rgba(0,0,0,0.5);
+
+    transition: all .12s ease;
+}
+
+/* number buttons */
+.button{
+    background: linear-gradient(145deg,#3b5875,#2c3e50);
+}
+
+/* operator */
+.button-grey{
+    background: linear-gradient(145deg,#bdc3c7,#95a5a6);
+    color: black;
+}
+
+/* clear */
+.buttonC{
+    background: linear-gradient(145deg,#ff7a7a,#e74c3c);
+}
+
+/* glossy shine */
+button::after{
+    content:"";
+    position:absolute;
+    top:3px;
+    left:6px;
+    right:6px;
+    height:35%;
+    border-radius:10px;
+    background:linear-gradient(to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.05));
+}
+
+/* hover lift */
+button:hover{
+    transform: translateY(-2px);
+}
+
+/* press effect */
+button:active{
+    transform: translateY(6px);
+    box-shadow:
+        0 2px 0 #1a252f,
+        0 4px 8px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
+/* Hover effect */
+button:hover{
+    opacity: 0.8;
+}
